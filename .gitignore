@@ -1,0 +1,9 @@
+.env
+.idea
+virtual
+myvenv
+*.sqlite3
+*pyc
+media
+__pycache__pip
+staticfilesls
