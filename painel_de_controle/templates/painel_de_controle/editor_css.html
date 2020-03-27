@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block container %}
+    <script src="{% static 'js/codemirror-5.52.2/lib/codemirror.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'js/codemirror-5.52.2/lib/codemirror.css' %}">
+    <script src="{% static 'js/codemirror-5.52.2/mode/css/css.js' %}"></script>
+
+    <h1>Painel de controle</h1>
+
+    <div id="codeeditor"></div>
+    <script>
+        var editor = CodeMirror(document.getElementById("codeeditor"));
+    </script>
+
+{% endblock %}
