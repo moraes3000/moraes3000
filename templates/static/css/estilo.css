@@ -1,0 +1,33 @@
+body {
+
+}
+
+.conteudo {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
+    background-color: #ffffff;
+    border: 1px solid #fafafa;
+
+}
+
+.navbar-collapse {
+    background-color: #1b1b1b;
+    color: #ffffff;
+}
+
+
+
+.navbar-toggler-icon {
+    color: white !important;
+}
+
+@media (max-width: 750px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .navbar-collapse .navbar-nav .nav-item{
+    padding-left: 15px;
+    border-bottom: 1px solid #fff0ff;
+}
+
+}

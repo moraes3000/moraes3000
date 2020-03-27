@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    <div class="row mx-1">
+        <div class="col-12">
+
+            <h2> {{ object }}</h2>
+        </div>
+
+        <div class="col-lg-6">
+            aaaa
+        </div>
+
+        <div class="col-lg-6">
+            {{ object.descricao |safe }}
+        </div>
+
+    </div>
+{% endblock %}

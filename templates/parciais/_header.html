@@ -1,0 +1,30 @@
+{% load static %}
+
+<nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button"
+     style="height: 80px;background-color: #1b1b1b;color: #ffffff;">
+    <div class="container-fluid container">
+        <a class="navbar-brand" href="/" style="color: #ffffff">Logo</a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"
+             id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" style="color:#ffffff;" href="">Home</a>
+                </li>
+                 <li class="nav-item" role="presentation">
+                    <a class="nav-link active" style="color:#ffffff;" href="{% url 'JogoListView' %}">Jogos</a>
+                </li>
+
+                 <li class="nav-item" role="presentation">
+                    <a class="nav-link active" style="color:#ffffff;" href="{% url 'HomeTemplateView' %}">Blog</a>
+                </li>
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
