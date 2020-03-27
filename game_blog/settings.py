@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     # PLUGIN
     'ckeditor',
     'ckeditor_uploader',
+    'django.contrib.humanize',
+    'crispy_forms',
 
 ]
 
@@ -87,8 +89,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
 
 # DATABASES = {
 #     'default': {
@@ -169,7 +169,7 @@ CKEDITOR_CONFIGS = {
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
         'extraPlugins': ','.join([
-            'uploadimage', # the upload image feature
+            'uploadimage',  # the upload image feature
             # your extra plugins here
             'div',
             'autolink',
@@ -199,7 +199,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
@@ -218,6 +217,10 @@ MESSAGE_TAGS = {
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
 }
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 # local settings
 try:

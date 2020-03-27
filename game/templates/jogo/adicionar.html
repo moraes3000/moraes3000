@@ -1,0 +1,15 @@
+{% extends 'index-admin.html'  %}
+{% load static crispy_forms_tags %}
+{% block conteudo %}
+  <div class="row">
+        <form class="form-basic" method="POST" action="{{ request.get_full_path }}" enctype="multipart/form-data">
+            <div class="form-title-row">
+                <h1>Adicionar plano de custo</h1>
+            </div>
+            {% csrf_token %}
+            {{ form.media }}
+            {% crispy form %}
+        </form>
+    </div>
+
+{% endblock %}

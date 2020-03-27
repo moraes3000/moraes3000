@@ -25,5 +25,6 @@ urlpatterns = [
 
   path('',include('game.urls')),
   path('blog/',include('blog.urls')),
+  path('paineladministravo/',include('painel_de_controle.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
