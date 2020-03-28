@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomeTemplateView
+from blog.views.blog import HomeTemplateView
 
 urlpatterns = [
     path('', HomeTemplateView.as_view(), name='HomeTemplateView'),
