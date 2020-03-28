@@ -33,7 +33,11 @@
             <tr>
                 <td>{{ jogo.id }}</td>
                 <td>{{ jogo.nome }}</td>
-                <td>{{ jogo.slug }}</td>
+                <td>
+                    <a href="{% url 'CapituloJogoListView' jogo.id %}" target="_blank">
+                        {{ jogo.slug }}
+                    </a>
+                </td>
                 <td class="d-flex justify-content-between">
                     <a href="{% url 'JogoUpdate' jogo.slug %}">Editar</a>
                     <a href="{% url 'JogoDelete' jogo.slug %}">Deletar</a>
