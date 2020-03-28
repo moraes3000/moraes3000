@@ -5,7 +5,7 @@ from game.views.jogos import JogoListView, JogoCreateView, AdminJogoList, JogoUp
 urlpatterns = [
     path('', JogoListView.as_view(), name='JogoListView'),
     # admin
-    path('novo', JogoCreateView.as_view(), name='JogoCreateView'),
+    path('admin-add-jogo', JogoCreateView.as_view(), name='JogoCreateView'),
     path('admin-listar-jogo', AdminJogoList.as_view(), name='AdminJogoList'),
     path('admin-editar-jogo/<slug:slug>',JogoUpdate.as_view(), name='JogoUpdate'),
     path('admin-remover-jogo/<slug:slug>', JogoDelete.as_view(), name='JogoDelete'),
@@ -14,6 +14,7 @@ urlpatterns = [
     path('lista-de-capitulos/<int:pk>/', CapituloJogoListView.as_view(), name='CapituloJogoListView'),
     path('capitulo/<slug:slug>/', CapituloJogoDetailView.as_view(), name='CapituloJogoDetailView'),
     #admin
-    path('admin-listar-capitulo', AdminCapituloList.as_view(), name='AdminCapituloList')
+    path('admin-listar-capitulo', AdminCapituloList.as_view(), name='AdminCapituloList'),
+    # path('admin-add-capitulo', CapituloCreate.as_view(), name='CapituloCreate'),
 
 ]
