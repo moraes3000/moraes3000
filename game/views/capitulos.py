@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,CreateView,UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
+from game.forms import CapituloJogoForm
 from game.models import JogoModel, CapituloJogoModel
 
 class CapituloJogoListView(ListView):
@@ -32,3 +33,22 @@ class AdminCapituloList(ListView):
     model = CapituloJogoModel
     template_name = 'capitulo/admin-listar.html'
 
+class CapituloCreate(CreateView):
+    model = CapituloJogoModel
+    form_class = CapituloJogoForm
+    template_name = 'capitulo/adicionar.html'
+    success_url = reverse_lazy('AdminCapituloList')
+
+
+class CapituloUpdate(UpdateView):
+    model = CapituloJogoModel
+    form_class = CapituloJogoForm
+    template_name = 'capitulo/adicionar.html'
+    success_url = reverse_lazy('AdminCapituloList')
+
+
+class CapituloDelete(DeleteView):
+    model = CapituloJogoModel
+    form_class = CapituloJogoForm
+    template_name = 'capitulo/excluir.html'
+    success_url = reverse_lazy('AdminCapituloList')

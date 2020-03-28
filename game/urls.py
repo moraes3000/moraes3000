@@ -1,5 +1,6 @@
 from django.urls import path
-from game.views.capitulos import CapituloJogoListView, CapituloJogoDetailView, AdminCapituloList
+from game.views.capitulos import CapituloJogoListView, CapituloJogoDetailView, AdminCapituloList, CapituloCreate, \
+    CapituloUpdate, CapituloDelete
 from game.views.jogos import JogoListView, JogoCreateView, AdminJogoList, JogoUpdate, JogoDelete
 
 urlpatterns = [
@@ -15,6 +16,8 @@ urlpatterns = [
     path('capitulo/<slug:slug>/', CapituloJogoDetailView.as_view(), name='CapituloJogoDetailView'),
     #admin
     path('admin-listar-capitulo', AdminCapituloList.as_view(), name='AdminCapituloList'),
-    # path('admin-add-capitulo', CapituloCreate.as_view(), name='CapituloCreate'),
+    path('admin-add-capitulo', CapituloCreate.as_view(), name='CapituloCreate'),
+    path('admin-editar-capitulo/<slug:slug>', CapituloUpdate.as_view(), name='CapituloUpdate'),
+    path('admin-remover-capitulo/<slug:slug>', CapituloDelete.as_view(), name='CapituloDelete'),
 
 ]

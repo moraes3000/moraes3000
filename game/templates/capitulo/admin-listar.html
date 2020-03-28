@@ -42,8 +42,8 @@
                 </td>
 
                 <td class="d-flex justify-content-between">
-                    <a href="">Editar</a>
-                    <a href="">Deletar</a>
+                    <a href="{% url 'CapituloUpdate' capitulo.slug %}">Editar</a>
+                    <a href="{% url 'CapituloDelete' capitulo.slug %}">Deletar</a>
                 </td>
             </tr>
         {% endfor %}
