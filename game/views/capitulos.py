@@ -26,3 +26,9 @@ class CapituloJogoListView(ListView):
 class CapituloJogoDetailView(DetailView):
     model = CapituloJogoModel
     template_name = 'capitulo/detalhe.html'
+
+
+class AdminCapituloList(ListView):
+    model = CapituloJogoModel
+    template_name = 'capitulo/admin-listar.html'
+

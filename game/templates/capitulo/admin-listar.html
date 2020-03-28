@@ -1,0 +1,53 @@
+{% extends 'index-admin.html' %}
+{% load static crispy_forms_tags %}
+{% block conteudo %}
+
+    <meta http-equiv="refresh" content="600">
+    <script src="{% static 'js/bootstrap-table-master/jquery-3.2.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'js/bootstrap-table-master/bootstrap-table.css' %}">
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table-pt-BR.js' %}"></script>
+
+    <h1>
+        Listar capitulos
+    </h1>
+    <table
+{#            data-pagination="true"#}
+            data-locale="pt-BR"
+            data-toggle="table"
+            data-search="true"
+            data-sortable="true"
+            data-show-columns="true"
+            class="tabela-usuario">
+        <thead>
+        <tr>
+            <th data-sortable="true">ID</th>
+            <th data-sortable="true">Nome</th>
+            <th data-sortable="true"><Jogo></Jogo></th>
+            <th data-sortable="true">URL</th>
+            <th data-sortable="true">Ação</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for capitulo in object_list %}
+            <tr>
+                <td>{{ capitulo.id }}</td>
+                <td>{{ capitulo.nome }}</td>
+                <td>{{ capitulo.jogo }}</td>
+                <td>
+                    <a href="{% url 'CapituloJogoDetailView' capitulo.slug %}" target="_blank">
+                        {{ capitulo.slug }}
+                    </a>
+                </td>
+
+                <td class="d-flex justify-content-between">
+                    <a href="">Editar</a>
+                    <a href="">Deletar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

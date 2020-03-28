@@ -45,8 +45,7 @@
                            aria-controls="collapse-1" href="#jogo" role="button">
                             <i class="fas fa-cog"></i><span>JOGOS</span>
                         </a>
-                        <div class="collapse"
-                             id="jogo">
+                        <div class="collapse" id="jogo">
                             <div class="bg-white border rounded py-2 collapse-inner">
                                 <h6 class="collapse-header">Edições dos Jogos</h6>
                                 <a class="collapse-item" href="{% url 'JogoCreateView' %}">Adicionar novos jogos</a>
@@ -57,18 +56,17 @@
                 </li>
                 {#categoria#}
 
-                  <li class="nav-item" role="presentation">
+                <li class="nav-item" role="presentation">
                     <div>
                         <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
-                           aria-controls="collapse-1" href="#jogo" role="button">
+                           aria-controls="collapse-1" href="#EPISÓDIO" role="button">
                             <i class="fas fa-cog"></i><span>EPISÓDIO</span>
                         </a>
-                        <div class="collapse"
-                             id="jogo">
+                        <div class="collapse" id="EPISÓDIO">
                             <div class="bg-white border rounded py-2 collapse-inner">
                                 <h6 class="collapse-header">Edições dos Episódio</h6>
                                 <a class="collapse-item" href="#">Adicionar novos Episódio</a>
-                                <a class="collapse-item" href="#">Listar Episódio</a>
+                                <a class="collapse-item" href="{% url 'AdminCapituloList' %}">Listar Episódio</a>
                             </div>
                         </div>
                     </div>
@@ -88,10 +86,10 @@
                     <div>
                         <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
                            aria-controls="collapse-1" href="#blog" role="button">
-                            <i class="fas fa-cog"></i><span>Blog</span>
+                            <i class="fas fa-cog"></i>
+                            <span>Blog</span>
                         </a>
-                        <div class="collapse"
-                             id="blog">
+                        <div class="collapse" id="blog">
                             <div class="bg-white border rounded py-2 collapse-inner">
                                 <h6 class="collapse-header">Edições dos Blog</h6>
                                 <a class="collapse-item" href="">Adicionar novas postagens</a>
@@ -101,6 +99,55 @@
                     </div>
                 </li>
                 {#      fim blog                  #}
+
+
+                {# Inicio banner #}
+
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    <p class="mb-0">Banner</p>
+                </div>
+                <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link disabled" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#Banner" role="button">
+                            <i class="fas fa-cog"></i>
+                            <span>Banner</span>
+                        </a>
+                        <div class="collapse" id="Banner">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Banner</h6>
+                                <a class="collapse-item" href="">Adicionar Banner</a>
+                                <a class="collapse-item" href="">Listar Banner</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {# fim banner #}
+
+                {# Inicio Usuários #}
+
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    <p class="mb-0">Usuários</p>
+                </div>
+                <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link disabled" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#Usuários" role="button">
+                            <i class="fas fa-cog"></i>
+                            <span>Usuários</span>
+                        </a>
+                        <div class="collapse" id="Usuários">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Usuários</h6>
+                                <a class="collapse-item" href="">Adicionar Usuários</a>
+                                <a class="collapse-item" href="">Listar Usuários</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {# fim Usuários #}
 
             </ul>
             <div class="text-center d-none d-md-inline">
