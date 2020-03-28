@@ -9,7 +9,6 @@
         <div class="col-md-3 mb-3" >
             <div class="bg-light border-right" id="sidebar-wrapper">
 
-
                 <div class="list-group list-group-flush">
                     {% for jogo in object_list %}
                         <a href="{% url 'CapituloJogoListView' jogo.pk %}"
@@ -17,18 +16,17 @@
                     {% endfor %}
                 </div>
             </div>
-
-
         </div>
 
         <div class="col order-sm-2">
 
-
             <div class="row">
+
                 {% for jogo in object_list %}
                     <div class="col-lg-4 mb-4">
                         <a href="{% url 'CapituloJogoListView' jogo.pk %}">
                             <div class="card h-100">
+
                                 {% if  jogo.imagem %}
                                     <img class="card-img-top" src="{{ jogo.imagem.url }}" alt="Card image cap">
                                 {% else %}
@@ -38,17 +36,13 @@
 
                                 <h4 class="card-header">{{ jogo.nome|safe }}</h4>
 
-
                             </div>
                         </a>
                     </div>
-
                 {% endfor %}
 
             </div>
         </div>
-
     </div>
-
 
 {% endblock %}

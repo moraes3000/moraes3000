@@ -4,15 +4,15 @@
 
     <meta http-equiv="refresh" content="600">
     <script src="{% static 'js/bootstrap-table-master/jquery-3.2.1.min.js' %}"></script>
-    <link href="{% static 'js/bootstrap-table-master/bootstrap-table.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'js/bootstrap-table-master/bootstrap-table.css' %}">
     <script src="{% static 'js/bootstrap-table-master/bootstrap-table.js' %}"></script>
-    <script src="{% static 'js/bootstrap-table-master/locale/bootstrap-table-pt-BR.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table-pt-BR.js' %}"></script>
 
-<h1>
-   Listar
-</h1>
+    <h1>
+        Listar Jogos
+    </h1>
     <table
-            {#              data-pagination="true"#}
+{#            data-pagination="true"#}
             data-locale="pt-BR"
             data-toggle="table"
             data-search="true"
@@ -20,7 +20,6 @@
             data-show-columns="true"
             class="tabela-usuario">
         <thead>
-
         <tr>
             <th data-sortable="true">ID</th>
             <th data-sortable="true">Nome</th>
@@ -28,20 +27,20 @@
             <th data-sortable="true">Ação</th>
         </tr>
         </thead>
+
         <tbody>
         {% for jogo in object_list %}
             <tr>
-                <td>{{jogo.id}}</td>
-                <td>{{jogo.nome}}</td>
-                <td>a</td>
-                <td>a</td>
+                <td>{{ jogo.id }}</td>
+                <td>{{ jogo.nome }}</td>
+                <td>{{ jogo.slug }}</td>
+                <td class="d-flex justify-content-between">
+                    <a href="{% url 'JogoUpdate' jogo.slug %}">Editar</a>
+                    <a href="{% url 'JogoDelete' jogo.slug %}">Deletar</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
-
     </table>
-    Listar
-
-
 
 {% endblock %}

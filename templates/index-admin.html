@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Administrativo - {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'admin/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="{% static 'admin/assets/fonts/fontawesome-all.min.css' %}">
+</head>
+
+<body id="page-top">
+<div id="wrapper">
+
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-dark p-0">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">
+                    <span>LOGO</span>
+                </div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" href="index-admin.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>&nbsp;Dashboard</span>
+                    </a>
+                </li>
+                <hr class="sidebar-divider">
+                {#      Inicio jogos                  #}
+                <div class="sidebar-heading">
+                    <p class="mb-0">JOGOS</p>
+                </div>
+                <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#jogo" role="button">
+                            <i class="fas fa-cog"></i><span>JOGOS</span>
+                        </a>
+                        <div class="collapse"
+                             id="jogo">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Jogos</h6>
+                                <a class="collapse-item" href="{% url 'JogoCreateView' %}">Adicionar novos jogos</a>
+                                <a class="collapse-item" href="{% url 'AdminJogoList' %}">Listar Jogo</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {#categoria#}
+
+                  <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#jogo" role="button">
+                            <i class="fas fa-cog"></i><span>EPISÓDIO</span>
+                        </a>
+                        <div class="collapse"
+                             id="jogo">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Episódio</h6>
+                                <a class="collapse-item" href="#">Adicionar novos Episódio</a>
+                                <a class="collapse-item" href="#">Listar Episódio</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+                {# Inicio jogo #}
+
+
+                {# Inicio blog #}
+
+                <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    <p class="mb-0">Blog</p>
+                </div>
+                <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#blog" role="button">
+                            <i class="fas fa-cog"></i><span>Blog</span>
+                        </a>
+                        <div class="collapse"
+                             id="blog">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Blog</h6>
+                                <a class="collapse-item" href="">Adicionar novas postagens</a>
+                                <a class="collapse-item" href="">Listar Postagens</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {#      fim blog                  #}
+
+            </ul>
+            <div class="text-center d-none d-md-inline">
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="d-flex flex-column px-3" id="content-wrapper">
+        {% block conteudo %}
+        {% endblock %}
+    </div>
+
+    <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+<script src="{% static 'admin/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'admin/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/chart.min.js' %}"></script>
+<script src="{% static 'admin/assets/js/bs-charts.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+<script src="{% static 'admin/assets/js/theme.js' %}"></script>
+
+</body>
+
+</html>
