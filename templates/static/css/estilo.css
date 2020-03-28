@@ -2,6 +2,12 @@ body {
 
 }
 
+.tp-0 {
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
 .conteudo {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 3px rgba(0, 0, 0, .2);
     background-color: #ffffff;
@@ -15,19 +21,26 @@ body {
 }
 
 
-
 .navbar-toggler-icon {
     color: white !important;
 }
 
-@media (max-width: 750px) {
-    .container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .navbar-collapse .navbar-nav .nav-item{
-    padding-left: 15px;
-    border-bottom: 1px solid #fff0ff;
+
+.div-titulo h2 small {
+    font-size: 60%;
 }
 
+.div-titulo h2 {
+    border-bottom: 1px solid #e4e4e4 !important;
+    margin-bottom: 15px;
 }
+
+.card-body p img {
+    display: none;
+}
+
+#lista-thumbnail img {
+    max-width: 255px;
+    height: 142px;
+}
+

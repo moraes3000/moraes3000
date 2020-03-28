@@ -3,11 +3,9 @@
 {% block container %}
 
 
-    <div class="row mx-1">
-        <div class="col-12">
-
-            <h2>Lista de capitulos "jogo {{ object }}"</h2>
-
+    <div class="row" id="lista-thumbnail">
+        <div class="col-12 div-titulo">
+            <h2>{{ object |title}} </h2>
         </div>
         {% for capitulo in object_list %}
 
@@ -21,10 +19,9 @@
                             <img class="card-img-top" src="http://placehold.it/750x300">
                         {% endif %}
 
-
                         <h4 class="card-header">{{ capitulo.nome|safe }}</h4>
                         <div class="card-body">
-                            {{ capitulo.descricao  |safe |truncatewords:10 }}
+                            {{ capitulo.descricao  |safe |truncatewords:15 }}
                         </div>
 
                     </a>
