@@ -7,7 +7,7 @@ from game.models import JogoModel, CapituloJogoModel
 
 class CapituloJogoListView(ListView):
     model = CapituloJogoModel
-    template_name = 'capitulo/lista.html'
+    template_name = 'game/capitulo/lista.html'
 
     def get_queryset(self):
         pk = self.kwargs.get('pk')
@@ -26,29 +26,29 @@ class CapituloJogoListView(ListView):
 
 class CapituloJogoDetailView(DetailView):
     model = CapituloJogoModel
-    template_name = 'capitulo/detalhe.html'
+    template_name = 'game/capitulo/detalhe.html'
 
 
 class AdminCapituloList(ListView):
     model = CapituloJogoModel
-    template_name = 'capitulo/admin-listar.html'
+    template_name = 'game/capitulo/admin-listar.html'
 
 class CapituloCreate(CreateView):
     model = CapituloJogoModel
     form_class = CapituloJogoForm
-    template_name = 'capitulo/adicionar.html'
+    template_name = 'game/capitulo/adicionar.html'
     success_url = reverse_lazy('AdminCapituloList')
 
 
 class CapituloUpdate(UpdateView):
     model = CapituloJogoModel
     form_class = CapituloJogoForm
-    template_name = 'capitulo/adicionar.html'
+    template_name = 'game/capitulo/adicionar.html'
     success_url = reverse_lazy('AdminCapituloList')
 
 
 class CapituloDelete(DeleteView):
     model = CapituloJogoModel
     form_class = CapituloJogoForm
-    template_name = 'capitulo/excluir.html'
+    template_name = 'game/capitulo/excluir.html'
     success_url = reverse_lazy('AdminCapituloList')

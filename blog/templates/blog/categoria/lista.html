@@ -1,0 +1,45 @@
+{% extends 'index-admin.html' %}
+{% load static crispy_forms_tags %}
+{% block conteudo %}
+
+    <meta http-equiv="refresh" content="600">
+    <script src="{% static 'js/bootstrap-table-master/jquery-3.2.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'js/bootstrap-table-master/bootstrap-table.css' %}">
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table-pt-BR.js' %}"></script>
+
+    <h1>
+       Listar categorias do blog
+    </h1>
+    <table
+{#            data-pagination="true"#}
+            data-locale="pt-BR"
+            data-toggle="table"
+            data-search="true"
+            data-sortable="true"
+            data-show-columns="true"
+            class="tabela-usuario">
+        <thead>
+        <tr>
+            <th data-sortable="true">ID</th>
+            <th data-sortable="true">Nome</th>
+            <th data-sortable="true">Ação</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for categoria_blog in object_list %}
+            <tr>
+                <td>{{ categoria_blog.id }}</td>
+                <td>{{ categoria_blog.nome_cat }}</td>
+
+                <td class="d-flex justify-content-between">
+                    <a href="{% url 'AdminCategoriaUpdate' categoria_blog.slug %}">Editar</a>
+                    <a href="{% url 'AdminCategoriaDelete' categoria_blog.slug %}">Deletar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

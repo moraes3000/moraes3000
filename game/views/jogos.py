@@ -10,30 +10,30 @@ from game.models import JogoModel
 
 class JogoListView(ListView):
     model = JogoModel
-    template_name = 'jogo/lista.html'
+    template_name = 'game/jogo/lista.html'
 
 
 class JogoCreateView(CreateView):
     model = JogoModel
     form_class = JogoForm
-    template_name = 'jogo/adicionar.html'
+    template_name = 'game/jogo/adicionar.html'
     success_url = reverse_lazy('AdminJogoList')
 
 
 class AdminJogoList(ListView):
     model = JogoModel
-    template_name = 'jogo/admin-lista.html'
+    template_name = 'game/jogo/admin-lista.html'
 
 
 class JogoUpdate(UpdateView):
     model = JogoModel
     form_class = JogoForm
-    template_name = 'jogo/adicionar.html'
+    template_name = 'game/jogo/adicionar.html'
     success_url = reverse_lazy('AdminJogoList')
 
 
 class JogoDelete(DeleteView):
     model = JogoModel
     form_class = JogoForm
-    template_name = 'jogo/excluir.html'
+    template_name = 'game/jogo/excluir.html'
     success_url = reverse_lazy('AdminJogoList')

@@ -12,12 +12,12 @@ from blog.models.categoria import CategoriaBlogModel
 
 
 class PostIndex(ListView):
-    template_name = 'blog/lista.html'
+    template_name = 'blog/postagem/lista.html'
     model = PostModel
     context_object_name = 'posts'
 
 class PostDetalhes(DetailView):
-    template_name = 'blog/detalhe.html'
+    template_name = 'blog/postagem/detalhe.html'
     model = PostModel
     context_object_name = 'post'
 

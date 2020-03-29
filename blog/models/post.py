@@ -2,25 +2,30 @@ from django.db import models
 from blog.models.categoria import CategoriaBlogModel
 from django.contrib.auth.models import User
 from django.utils import timezone
-#otimizar o tamanho da imagem
+# otimizar o tamanho da imagem
 from PIL import Image
 from django.conf import settings
 import os
 
+
 class PostModel(models.Model):
     titulo_post = models.CharField(max_length=255, verbose_name='Titulo')
+    slug = models.SlugField(blank=True)
     autor_post = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     data_post = models.DateTimeField(default=timezone.now)
     conteudo_post = models.TextField(verbose_name='Conteúdo')
-    excerto_post = models.TextField(verbose_name='Excerto')
-    categoria_post =models.ForeignKey(CategoriaBlogModel, on_delete=models.DO_NOTHING, blank=True, null=True, verbose_name='Categoria da postagem')
+    excerto_post = models.TextField(verbose_name='Excerto', blank=True)
+    categoria_post = models.ForeignKey(CategoriaBlogModel, on_delete=models.DO_NOTHING, blank=True, null=True,
+                                       verbose_name='Categoria da postagem')
     imagem_post = models.ImageField(upload_to='post_img/%Y/%m/%d', blank=True, null=True)
     publicado_post = models.BooleanField(default=False)
 
+    def generate_slug(self):
+        from django.template.defaultfilters import slugify
+        return slugify(self.titulo_post)
 
     def __str__(self):
         return self.titulo_post
-
 
     class Meta:
         verbose_name = 'Postagem'

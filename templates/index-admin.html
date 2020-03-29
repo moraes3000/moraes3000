@@ -87,13 +87,48 @@
                         <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
                            aria-controls="collapse-1" href="#blog" role="button">
                             <i class="fas fa-cog"></i>
-                            <span>Blog</span>
+                            <span>Postagem</span>
                         </a>
                         <div class="collapse" id="blog">
                             <div class="bg-white border rounded py-2 collapse-inner">
                                 <h6 class="collapse-header">Edições dos Blog</h6>
                                 <a class="collapse-item" href="">Adicionar novas postagens</a>
                                 <a class="collapse-item" href="">Listar Postagens</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+{#                #}
+                <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#Categoria" role="button">
+                            <i class="fas fa-cog"></i>
+                            <span>Categoria</span>
+                        </a>
+                        <div class="collapse" id="Categoria">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Categoria</h6>
+                                <a class="collapse-item" href="{% url 'AdminCategoriaCreate'  %}">Adicionar novas Categorias</a>
+                                <a class="collapse-item" href="{% url 'AdminCategoriaBlogList'  %}">Listar Categorias</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                {#                #}
+                <li class="nav-item" role="presentation">
+                    <div>
+                        <a class="btn btn-link nav-link" data-toggle="collapse" aria-expanded="false"
+                           aria-controls="collapse-1" href="#Comentario" role="button">
+                            <i class="fas fa-cog"></i>
+                            <span>Comentario</span>
+                        </a>
+                        <div class="collapse" id="Comentario">
+                            <div class="bg-white border rounded py-2 collapse-inner">
+                                <h6 class="collapse-header">Edições dos Comentarios</h6>
+                                <a class="collapse-item" href="">Adicionar novos Comentarios</a>
+                                <a class="collapse-item" href="">Listar Comentarios</a>
                             </div>
                         </div>
                     </div>
