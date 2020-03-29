@@ -1,0 +1,54 @@
+{% extends 'index-admin.html' %}
+{% load static crispy_forms_tags %}
+{% block conteudo %}
+
+    <meta http-equiv="refresh" content="600">
+    <script src="{% static 'js/bootstrap-table-master/jquery-3.2.1.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'js/bootstrap-table-master/bootstrap-table.css' %}">
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table.js' %}"></script>
+    <script src="{% static 'js/bootstrap-table-master/bootstrap-table-pt-BR.js' %}"></script>
+
+    <h1>
+       Listar Postagem
+    </h1>
+    <table
+{#            data-pagination="true"#}
+            data-locale="pt-BR"
+            data-toggle="table"
+            data-search="true"
+            data-sortable="true"
+            data-show-columns="true"
+            class="tabela-usuario">
+        <thead>
+        <tr>
+            <th data-sortable="true">ID</th>
+            <th data-sortable="true">Nome</th>
+            <th data-sortable="true">Autor</th>
+            <th data-sortable="true">Data</th>
+            <th data-sortable="true">Categoria</th>
+            <th data-sortable="true">Publicado</th>
+            <th data-sortable="true">Ação</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for post in object_list %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.titulo_post }}</td>
+                 <td>{{ post.autor_post }}</td>
+                 <td>{{ post.data_post }}</td>
+                 <td>{{ post.categoria_post }}</td>
+                 <td>{{ post.publicado_post }}</td>
+            
+
+                <td class="d-flex justify-content-between">
+                    <a href="{% url 'PostUpdate' post.slug %}">Editar</a>
+                    <a href="{% url 'PostDelete' post.slug %}">Deletar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

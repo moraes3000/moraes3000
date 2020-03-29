@@ -20,9 +20,7 @@ class PostModel(models.Model):
     imagem_post = models.ImageField(upload_to='post_img/%Y/%m/%d', blank=True, null=True)
     publicado_post = models.BooleanField(default=False)
 
-    def generate_slug(self):
-        from django.template.defaultfilters import slugify
-        return slugify(self.titulo_post)
+
 
     def __str__(self):
         return self.titulo_post
@@ -30,6 +28,10 @@ class PostModel(models.Model):
     class Meta:
         verbose_name = 'Postagem'
         verbose_name_plural = 'Postagens'
+
+    def generate_slug(self):
+        from django.template.defaultfilters import slugify
+        return slugify(self.titulo_post)
 
     # def save(self, *args, **kwargs):
     #     super().save(*args, **kwargs)

@@ -11,7 +11,7 @@ from crispy_forms.layout import Submit, Button
 class PostForm(forms.ModelForm):
     class Meta:
         model = PostModel
-        fields = ('titulo_post', 'autor_post',)
+        fields = ('titulo_post', 'autor_post','conteudo_post','categoria_post','imagem_post','publicado_post')
 
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
