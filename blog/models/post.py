@@ -2,6 +2,9 @@ from django.db import models
 from blog.models.categoria import CategoriaBlogModel
 from django.contrib.auth.models import User
 from django.utils import timezone
+
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 # otimizar o tamanho da imagem
 from PIL import Image
 from django.conf import settings
@@ -41,7 +44,7 @@ class PostModel(models.Model):
     # def resize_image(img_name, new_width):
     #     img_path = os.path.join(settings.MEDIA_ROOT, img_name)
     #     img = Image.open(img_path)
-    #     width, height = img.size
+    #     width, height = img.size  
     #     new_height = round((new_width * height) / width)
     #
     #     if width <= new_width:
@@ -55,3 +58,8 @@ class PostModel(models.Model):
     #         quality=60
     #     )
     #     new_img.close()
+
+
+@receiver(pre_save, sender=PostModel)
+def nome_slug(sender, instance, **kwargs):
+    instance.slug = instance.generate_slug()
